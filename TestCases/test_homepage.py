@@ -17,7 +17,8 @@ class Test_HomePage():
         self.driver = setup  # initialize  driver from conftest file
         lpobj = LoginPage(self.driver)  # LoginPage Object
         homeobj = lpobj.login(TestData.username, TestData.password) # HomePage Object
-        homeobj.is_profile_img_visible()   # verify profile image
+        profile_img= homeobj.is_profile_img_visible()   # verify profile image
+        assert profile_img == True
 
 
 

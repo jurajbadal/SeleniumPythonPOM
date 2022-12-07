@@ -14,9 +14,11 @@ class HomePage(BasePage):
 
 
     def get_header_value(self):
+        """ Get home page header value """
         return self.get_element_text(self.HEADER)
 
     def is_profile_img_visible(self):
+        """ Return profile image is visible or not """
         return self.element_is_visible(self.PROFILE_IMG)
 
 

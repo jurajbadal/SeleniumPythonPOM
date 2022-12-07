@@ -15,13 +15,16 @@ class LoginPage(BasePage):
         super().__init__(driver)
 
     def verify_title(self, title):
+        """ Get title """
         return self.get_title(title)
 
     def login(self, username, password):
+        """ Login """
         self.do_send_keys(self.txt_USERNAME, username)  # set username
         self.do_send_keys(self.txt_PASSWORD, password)  # set password
         self.do_click(self.btn_LOGIN)
         return HomePage(self.driver)
 
     def is_forgot_password_link_is_visible(self):
+        """ Return forgot link is visible or not """
         return self.element_is_visible(self.lnk_FORGOT_PASSWORD)
