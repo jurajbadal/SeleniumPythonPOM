@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.selenium_manager import SeleniumManager
 import pytest
 
@@ -9,20 +10,26 @@ def setup(browser):
     global driver
 
     if browser == 'chrome':
-        SeleniumManager.driver_location('chrome')
-        chrome_option = webdriver.ChromeOptions()
-        chrome_option.add_argument('--incognito')
-        driver = webdriver.Chrome(options=chrome_option)
 
-    if browser == 'firefox':
-        SeleniumManager.driver_location('firefox')
-        driver = webdriver.Firefox()
+        chrome_option = webdriver.ChromeOptions()
+        chrome_option.set_capability("browserName", "chrome")
+        chrome_option.add_argument('--incognito')
+        SeleniumManager().driver_location(chrome_option)
+        driver = webdriver.Chrome(options=chrome_option)
+        driver.maximize_window()
+
+    elif browser == 'firefox':
+        firefox_option = Options()
+        firefox_option.set_capability("browserName", "firefox")
+        driver = webdriver.Firefox(options=firefox_option)
 
     else:
-        SeleniumManager.driver_location('chrome')
         chrome_option = webdriver.ChromeOptions()
+        chrome_option.set_capability("browserName", "chrome")
         chrome_option.add_argument('--incognito')
+        SeleniumManager().driver_location(chrome_option)
         driver = webdriver.Chrome(options=chrome_option)
+        driver.maximize_window()
 
     yield driver
     driver.close()
