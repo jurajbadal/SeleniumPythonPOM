@@ -6,7 +6,7 @@ Page-object-model (POM) is a pattern that we can apply it to develop efficient a
 
 ## Installation
 
-•	**Selenium** : Selenium 4.6.1 (for auto dowanload webdriver use SeleniumManager)
+•	**Selenium** : Selenium 4.12.0 (for auto dowanload webdriver use SeleniumManager)
 
 •	**Pytest** : Python UnitTest framework
 
