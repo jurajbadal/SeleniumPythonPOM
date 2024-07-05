@@ -1,0 +1,26 @@
+#0 klonovanie projektu z githubu
+https://github.com/Rahulmodi3/SeleniumPythonPOM.git
+
+#0 vzorove selenium testy
+https://github.com/seleniumbase/SeleniumBase/tree/master
+
+#1 instalacia virtualneho environmentu seleniumbase, aktivacie v jednom
+# isntaluje sa v prostrediach kde nemam prava spravcu na PC, ale potrebujem nieco vytvorit
+python3 -m venv sbase_env
+source sbase_env/bin/activate
+
+#2 python verzia a python cesta kde lezi
+python --version
+which python
+
+#3 ak nesedia verzie pythona tak sa daju matchovat. Zrusenie prikazu je unalias ....
+alias python=python3
+
+#4 vytvorenie virtualeho environmentu a foldra, jeho deaktivacia a zmazanie
+pip install virtualenv
+virtualenv a
+
+deactivate a
+rm -r a
+
+SKUSKA
